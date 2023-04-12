@@ -1,5 +1,5 @@
 h1{
-    font-family: 'Cinzel', serif;
+    font-family: 'Amatic SC', cursive;
 
 }
 
@@ -11,7 +11,7 @@ h1{
     box-sizing: border-box;
 }
 body{
-    background-color: #1d1e20;
+    background-color: #006E90;
 }
 .background{
     width: 430px;
@@ -29,8 +29,8 @@ body{
 }
 .shape:first-child{
     background: linear-gradient(
-        #1845ad,
-        #23a2f6
+        #f13101,
+        #F18F01
     );
     left: -80px;
     top: -80px;
@@ -38,12 +38,13 @@ body{
 .shape:last-child{
     background: linear-gradient(
         to right,
-        #ff512f,
-        #f09819
+        #415816,
+        #99C24D
     );
     right: -30px;
     bottom: -80px;
 }
+
 form{
     height: 520px;
     width: 400px;
@@ -93,9 +94,9 @@ input{
     color: #e5e5e5;
 }
 .buttonLog{
-    margin-top: 50px;
+    margin-top: 25px;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #ADCAD6;
     color: #080710;
     padding: 15px 0;
     font-size: 18px;
@@ -106,7 +107,7 @@ input{
 .buttonRegister{
     margin-top: 50px;
     width: 100%;
-    background-color: #9f80c4;
+    background-color: #F18F01;
     color: #080710;
     padding: 15px 0;
     font-size: 14px;
