@@ -5,6 +5,12 @@ on:
     branches:
       - master
 
+defaults:
+  run:
+    shell: bash
+    working-directory: ./continuous_testing
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,6 +19,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.14 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "YOUR APP's NAME" #Must be unique in Heroku
-          heroku_email: "YOUR EMAIL"
+          heroku_app_name: "proj-devops" #Must be unique in Heroku
+          heroku_email: "avalidzhanova@yahoo.fr"
           usedocker: true
