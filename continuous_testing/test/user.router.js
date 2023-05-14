@@ -1,5 +1,6 @@
 const app = require('../src/index')
 const chai = require('chai')
+const userController = require('../src/controllers/user')
 const chaiHttp = require('chai-http')
 const db = require('../src/dbClient')
 

@@ -42,11 +42,12 @@ describe('User', () => {
         firstname: 'Sergei',
         lastname: 'Kudinov'
       }
-       userController.create(user,() =>{
-        userController.create(user,(err,result) => {
+      userController.create(user, () => {
+        // Create the same user again
+        userController.create(user, (err, result) => {
           expect(err).to.not.be.equal(null)
-        expect(result).to.be.equal(null)
-        done()
+          expect(result).to.be.equal(null)
+          done()
         })
        })
      })
@@ -64,9 +65,9 @@ describe('User', () => {
       }
   //     // 2. Then, check if the result of the get method is correct
       userController.create(user,() =>{
-        userController.get(user,(err,result) =>{
+        userController.get(user.username,(err,result) =>{
           expect(err).to.be.equal(null)
-          expect(result).to.be.equal({
+          expect(result).to.be.deep.equal({
             firstname : 'Sergei',
             lastname : 'Kudinov'
           })
