@@ -6,10 +6,22 @@ on:
   pull_request:
     branches: [ main ]
 
+defaults:
+  run:
+    shell: bash
+    working-directory: ./continuous_testing
+
+
 jobs:
   build:
 
     runs-on: ubuntu-latest
+
+    services:
+      redis:
+        image: redis
+        ports: 
+          - 6379:6379
 
     strategy:
       matrix:
@@ -25,5 +37,3 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
-    
-    
