@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/continuous_testing":{"guestpath":"/home/continuous_testing","hostpath":"/home/anna/Documents/GitHub/projetdevops/continuous_testing","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/anna/Documents/GitHub/projetdevops/laC","disabled":false,"__vagrantfile":true}}}
