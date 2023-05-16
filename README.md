@@ -75,6 +75,10 @@ Cette partie est implémentée dans GitHub action. A chaque push du code dans Gi
 
 Tout d'abord le script installe les packages json nécessaires à l'exécution de l'application, et ensuite les tests sont lancés pour être sûr qu'il n'y a aucn bug avant le deployment.
 
+Lorsque l'intégration est réussi en passant tous les tests, voilà c qui devrait s'afficher dans github action.
+
+![integration](image/CI.png)
+
 # Configuration d'une VM en utilisant l'approche IaC 
 
 Avant de pouvoir lancer Vagrant il faut installer :
