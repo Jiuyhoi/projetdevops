@@ -1,0 +1,10 @@
+- name: Check redis health
+  uri:
+    url: http://127.0.0.1/-/health
+    return_content: yes
+  # Register the output of the module in a variable
+  register: redis_health
+
+- name: Print redis health
+  debug:
+    msg: "{{ redis_health.content }}"

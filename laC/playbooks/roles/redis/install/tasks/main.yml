@@ -1,0 +1,73 @@
+---
+- name: Install required packages
+  yum:
+    name:
+      - curl
+      - policycoreutils-python
+      - openssh-server
+      - perl
+    state: latest
+
+- name: Enable and start sshd
+  service:
+    name: sshd
+    state: started
+    enabled: yes
+
+- name: Enable HTTP+HTTPS access
+  firewalld:
+    
+    service: "{{ item }}"
+    permanent: yes
+    state: enabled
+  
+  with_items:
+    - http
+    - https
+
+- name: Reload firewalld
+  service:
+    name: firewalld
+    state: reloaded
+
+- name: Install postfix
+  yum:
+    name: postfix
+    state: latest
+
+- name: Enable and start postfix
+  service:
+    name: postfix
+    state: started
+    enabled: yes
+
+- name: Download Redis install script
+  get_url:
+    url: http://download.redis.io/redis-stable.tar.gz
+    dest: /tmp/redis-stable.tar.gz
+
+- name: Extract Redis tarball
+  unarchive:
+    src: /tmp/redis-stable.tar.gz
+    dest: /tmp
+    remote_src: yes
+
+- name: Build and install Redis
+  shell: |
+    cd /tmp/redis-stable
+    make
+    make install
+
+- name: Configure Redis
+  template:
+    src: redis.conf.j2
+    dest: /etc/redis.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Start Redis service
+  service:
+    name: redis
+    state: started
+    enabled: yes
