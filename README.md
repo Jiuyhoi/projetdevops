@@ -123,9 +123,24 @@ README.md     node_modules  package.json       test
 
 ## Ansible Provision
 
+Dans cette partie , nous pouvons automatiser efficacement la configuration et la gestion de notre infrastructure.
+Pour se faire , nous utilisons des  des playbooks et des rôles Ansible.
+Nous éffectuons le healthcheck pour s'assurer de la santé de l'application.
 
-# Docker
-## Dockerfile
+```bash
+- name: Check redis health
+  uri:
+    url: http://127.0.0.1/-/health
+    return_content: yes
+  
+  register: redis_health
+
+- name: Print redis health
+  debug:
+    msg: "{{ redis_health.content }}"
+```
+# 4.Docker
+##1. Dockerfile
 
 
 ```bash
@@ -156,11 +171,11 @@ docker images
 ```
 ![Dockerfile](image/docker image.png)
 
-## Push to dockerhub
+##2. Push to dockerhub
 
 ![Dockerfile](image/Docker-hub.png)
 
-# Docker-compose.yml
+#5. Docker-compose.yml
 
 Après avoir créer le fichier docker-compose.yml , pour vérifier qu'il fonctionne tapez dans le terminal :
 
