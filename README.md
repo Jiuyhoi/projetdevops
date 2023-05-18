@@ -169,7 +169,7 @@ pour verifier si l'image à bien été créer :
 docker images
 
 ```
-![Dockerfile](image/docker image.png)
+![Dockerfile](image/docker-image.png)
 
 ##2. Push to dockerhub
 
