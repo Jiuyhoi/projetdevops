@@ -123,3 +123,64 @@ README.md     node_modules  package.json       test
 
 ## Ansible Provision
 
+
+# Docker
+## Dockerfile
+
+
+```bash
+
+FROM node:16
+
+WORKDIR /usr/src/app
+COPY continuous_testing/package*.json ./
+RUN npm install
+COPY continuous_testing .
+
+EXPOSE 3000
+CMD [ "npm", "start" ]
+```
+Pour créer l'image les commandes suivantes sont à exécuter :
+
+
+```bash
+docker build -t 0778m/project .
+
+```
+pour verifier si l'image à bien été créer :
+
+
+```bash
+docker images
+
+```
+![Dockerfile](image/docker image.png)
+
+## Push to dockerhub
+
+![Dockerfile](image/Docker-hub.png)
+
+# Docker-compose.yml
+
+Après avoir créer le fichier docker-compose.yml , pour vérifier qu'il fonctionne tapez dans le terminal :
+
+```bash
+
+docker-compose up
+
+```
+puis 
+
+```bash
+docker-compose ps
+
+```
+![Docker-compose.yml](image/docker-compose.png)
+
+
+
+
+
+
+
+
