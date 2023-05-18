@@ -140,7 +140,7 @@ Nous éffectuons le healthcheck pour s'assurer de la santé de l'application.
     msg: "{{ redis_health.content }}"
 ```
 # 4.Docker
-##1. Dockerfile
+## 1. Dockerfile
 
 
 ```bash
@@ -171,11 +171,11 @@ docker images
 ```
 ![Dockerfile](image/docker-image.png)
 
-##2. Push to dockerhub
+## Push to dockerhub
 
 ![Dockerfile](image/Docker-hub.png)
 
-#5. Docker-compose.yml
+# Docker-compose.yml
 
 Après avoir créer le fichier docker-compose.yml , pour vérifier qu'il fonctionne tapez dans le terminal :
 
